@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+
+<body>
+<div id="app">
+	<a href="#">{{msg}}</a>
+	<h1>{{name}}</h1>
+	<a href="{{home}}">错误－－点击访问首页</a>
+	<a v-bind:href="home">正确－－点击访问首页</a>
+	<hr>
+	<!-- v-if -->
+	<a href="#" v-if="isLogin">是否看得见</a>
+	<!-- v-if v-else -->
+	<span v-if="isLogin">登录</span>
+	<span v-else>个人中心</span>
+	<!-- v-if v-else-if v-else-if v-else -->
+	<span v-if="level==1">国王</span>
+	<span v-else-if="level==2">皇帝</span>
+	<span v-else-if="level==3">国戚</span>
+	<span v-else-if="level==4">大臣</span>
+	<span v-else-if="level==5">平民</span>
+	<!-- v-show 与ｖ-if类似-->
+	<hr>
+	<h1 v-if='seen'>if</h1>
+	<h1 v-show='seen'>show</h1>
+</div>
+</body>
+
+<script type="text/javascript">
+	var app = new Vue({
+ 	 el: '#app',
+ 	 data: {
+ 		   msg: 'Hello Vue!',
+ 		   name:'it',
+ 		   home:'http://www.baidu.com',
+ 		   isLogin:true,
+ 		   level:5,
+ 		   seen:false,
+
+  }
+})
+</script>
+
+</html>
