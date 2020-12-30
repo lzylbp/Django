@@ -1,5 +1,5 @@
 from django.urls import path
-from book.views import login,weibo,res_json,res_json1,set_cookie,get_cookie,set_session,get_session,lujing,site_register3,site_register4,get_header,get_method
+from book.views import login,weibo,res_json,res_json1,set_cookie,get_cookie,set_session,get_session,lujing,site_register3,site_register4,get_header,get_method,JDLogin
 from book.converters import MobileConverter
 from django.urls import register_converter
 
@@ -34,6 +34,7 @@ urlpatterns = [
     path('get_session/',get_session),
 
 
+    path('jd/',JDLogin.as_view())
 
 
 ]

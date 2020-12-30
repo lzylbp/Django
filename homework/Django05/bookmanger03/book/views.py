@@ -142,3 +142,15 @@ def get_session(request):
     return HttpResponse('get_seeion')
 
 
+
+from django.views import View
+class JDLogin(View):
+    def get(self,request):
+        return HttpResponse('jd-login-get')
+    def post(self,request):
+        # a=self.adc(request)
+        # return HttpResponse(a)
+        return HttpResponse('jd-login-post')
+
+    def adc(self,request):
+        return HttpResponse('abc')
